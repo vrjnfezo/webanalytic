@@ -17,6 +17,15 @@
             padding: 20px;
             font-size: 24px;
         }
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
         section {
             padding: 40px;
         }
@@ -24,12 +33,40 @@
             display: flex;
             justify-content: center;
             gap: 20px;
+            flex-wrap: wrap;
         }
         .service-box {
             width: 300px;
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .about {
+            max-width: 800px;
+            margin: auto;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .gallery img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .contact-form {
+            max-width: 500px;
+            margin: auto;
+            text-align: left;
+        }
+        .contact-form label, .contact-form input, .contact-form textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
         }
         footer {
             background-color: #333;
@@ -45,7 +82,14 @@
         <p>Transformons vos rêves en réalité</p>
     </header>
     
-    <section>
+    <nav>
+        <a href="#services">Services</a>
+        <a href="#about">À propos</a>
+        <a href="#gallery">Galerie</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <section id="services">
         <h2>Nos services</h2>
         <div class="services">
             <div class="service-box">
@@ -63,9 +107,35 @@
         </div>
     </section>
     
-    <section>
+    <section id="about">
+        <h2>À propos</h2>
+        <p class="about">Élégance Événements est une agence spécialisée dans l'organisation d'événements uniques. Nous mettons notre expertise et notre passion au service de vos projets pour rendre chaque moment inoubliable.</p>
+    </section>
+    
+    <section id="gallery">
+        <h2>Galerie</h2>
+        <div class="gallery">
+            <img src="event1.jpg" alt="Événement 1">
+            <img src="event2.jpg" alt="Événement 2">
+            <img src="event3.jpg" alt="Événement 3">
+        </div>
+    </section>
+    
+    <section id="contact">
         <h2>Contact</h2>
-        <p>Envie de discuter de votre projet ? Contactez-nous à <strong>contact@elegance-events.com</strong></p>
+        <p>Envie de discuter de votre projet ? Remplissez le formulaire ci-dessous :</p>
+        <form class="contact-form">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit">Envoyer</button>
+        </form>
     </section>
     
     <footer>
